@@ -765,7 +765,7 @@ def init():
     AUTHORIZED_CERTS_PATH = os.path.join(CONF_DIR_PATH, 'authorized_certs')
     DHPARAM_PATH = os.path.join(CONF_DIR_PATH, 'dhparam.pem')
 
-    TMP_DIR_PATH = os.path.join(tempfile.gettempdir(), 'an2linux')
+    TMP_DIR_PATH = os.path.join(os.environ.get('XDG_RUNTIME_DIR'), 'an2linux')
 
     if not os.path.exists(CONF_DIR_PATH):
         os.makedirs(CONF_DIR_PATH)
